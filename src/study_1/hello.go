@@ -14,5 +14,5 @@ func handler(writter http.ResponseWriter, request *http.Request) {
 // main関数が必ず一つ必要
 func main() {
 	http.HandleFunc("/", handler) // ルートURLが呼び出された時、handlerが実行
-	http.ListenAndServe(":8080", nil) 
+	http.ListenAndServe(":8080", nil) // null
 }
