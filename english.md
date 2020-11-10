@@ -1,0 +1,2 @@
+optimize 最適化する
+specify 指定する
