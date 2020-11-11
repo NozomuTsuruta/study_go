@@ -10,3 +10,18 @@ func 関数名() 返す型 {
     return
 }
 ```
+
+Slice 可変配列のようなもの、同じ型しか入れられない
+
+例)`values := string[]{"hello","world"}`
+
+追加 → append(Slice,値)
+
+for 文
+range のあとの Slice の index と value にわけて、Slice の全ての要素を繰り返す
+
+```go
+for index, value := range values {
+    fmt.Plintln(value)
+}
+```

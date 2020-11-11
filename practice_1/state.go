@@ -4,6 +4,6 @@ import (
 	"fmt"
 )
 
-func printState()  {
+func printState() {
 	fmt.Println("Japan")
 }
