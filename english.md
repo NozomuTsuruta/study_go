@@ -8,7 +8,7 @@
 | assume     | 仮定する         |
 | equivalent | 等しい           |
 | annotate   | コメントを付ける |
-|            |                  |
+| convention | 慣習             |
 |            |                  |
 |            |                  |
 |            |                  |

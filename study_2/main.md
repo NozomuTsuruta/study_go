@@ -25,3 +25,21 @@ for index, value := range values {
     fmt.Plintln(value)
 }
 ```
+
+新しい型作成
+
+```go
+type values []string
+```
+
+receiver関数
+
+```go
+func (引数 受け取る型) 関数名() {
+
+}
+
+// 呼び出す時は↓
+値.関数名() ← 値は受け取る型同じ
+
+```
