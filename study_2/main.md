@@ -6,7 +6,7 @@
 関数宣言
 
 ```go
-func 関数名() 返す型 {
+func 関数名() 戻り値の型 {
     return
 }
 ```
@@ -32,10 +32,10 @@ for index, value := range values {
 type values []string
 ```
 
-receiver関数
+receiver 関数
 
 ```go
-func (引数 受け取る型) 関数名() {
+func (引数 受け取る型) 関数名() 戻り値の型 {
 
 }
 
@@ -43,3 +43,28 @@ func (引数 受け取る型) 関数名() {
 値.関数名() ← 値は受け取る型同じ
 
 ```
+
+Slice の値参照
+
+```go
+slice名[startIndexIncluding : endIndexNotIncluding]
+
+slice名[: endIndexNotIncluding] // 0からendIndexNotIncludingまで
+
+slice名[startIndexIncluding:] // startIndexIncludingから最後まで
+```
+
+値を2つ返す関数
+
+```go
+func 関数名() (戻り値1の型, 戻り値2の型) {
+
+}
+```
+
+2つの戻り値を受け取る
+
+```go
+変数1,変数2 := 関数名()
+```
+
