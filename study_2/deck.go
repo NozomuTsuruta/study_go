@@ -1,6 +1,7 @@
 package main
 
 import (
+	"strings"
 	"fmt"
 )
 
@@ -8,6 +9,7 @@ import (
 // which is a slice of strings
 type deck []string
 
+// 順番にカードを追加して、deckを返す
 func newDeck() deck {
 	cards := deck{}
 
@@ -22,6 +24,7 @@ func newDeck() deck {
 	return cards
 }
 
+// receiver printするだけ
 func (d deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
@@ -30,4 +33,10 @@ func (d deck) print() {
 
 func deal(d deck, handSize int) (deck,deck) {
 	return d[:handSize],d[handSize:]
+}
+
+// receiver deckをstringで出力
+func (d deck) toString() string {
+	// join   型変換
+	return strings.Join([]string(d),",")
 }

@@ -16,3 +16,4 @@ func main() {
 	http.HandleFunc("/", handler)     // ルートURLが呼び出された時、handlerが実行
 	http.ListenAndServe(":8080", nil) // null
 }
+
