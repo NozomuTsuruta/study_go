@@ -1,8 +1,9 @@
 package main
 
 import (
-	"strings"
 	"fmt"
+	"io/ioutil"
+	"strings"
 )
 
 // Create a new type of 'deck'
@@ -31,12 +32,16 @@ func (d deck) print() {
 	}
 }
 
-func deal(d deck, handSize int) (deck,deck) {
-	return d[:handSize],d[handSize:]
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
 }
 
 // receiver deckをstringで出力
 func (d deck) toString() string {
 	// join   型変換
-	return strings.Join([]string(d),",")
+	return strings.Join([]string(d), ",")
+}
+
+func (d deck) saveToFile(filename string) error {
+	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
 }

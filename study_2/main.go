@@ -1,15 +1,11 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
 	cards := newDeck()
-	fmt.Println(cards.toString())
+	cards.saveToFile("my_card")
 
 	// 2つの返り値取得
-	hand,remainingCards :=deal(cards, 5)
+	hand, remainingCards := deal(cards, 5)
 
 	// receiver呼び出し
 	hand.print()

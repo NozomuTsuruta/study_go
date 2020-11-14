@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main()  {
+func main() {
 	greeting := "Hello"
 	fmt.Println([]byte(greeting))
 }
