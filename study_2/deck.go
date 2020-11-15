@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // Create a new type of 'deck'
@@ -51,12 +53,29 @@ func newDeckFromFile(filename string) deck {
 	// bs = byte[]
 	bs, err := ioutil.ReadFile(filename)
 	if err != nil {
-		// Option #1 - log the error and return a call to newDeck()
-		// Option #2 - log the error and entirely quit the program
+		// エラー表示
 		fmt.Println("Error:", err)
+
+		// プログラムの終了
 		os.Exit(1)
 	}
 
 	s := strings.Split(string(bs), ",")
 	return deck(s)
+}
+
+func (d deck) shuffle() {
+	// int64のユニークな値をseedとして渡す nano seconds time
+	source := rand.NewSource(time.Now().UnixNano())
+
+	// sourceによって、毎回違う乱数を作成するように
+	r := rand.New(source)
+
+	for i := range d {
+		// 乱数作成 *Randならreceiverみたいな感じで呼べる
+		newPosition := r.Intn(len(d) - 1)
+
+		// 入れ替え
+		d[i], d[newPosition] = d[newPosition], d[i]
+	}
 }
