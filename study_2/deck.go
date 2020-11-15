@@ -35,6 +35,7 @@ func (d deck) print() {
 	}
 }
 
+// receiverにするとcards.deal(handSize)となるが、これだとcards自体が加工されているように見える
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
 }
