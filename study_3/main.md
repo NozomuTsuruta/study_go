@@ -51,3 +51,9 @@ func (pointerValues *values) updateValue() { // &で参照したvalのポイン�
 }
 
 ```
+
+ポインタのショートカット
+
+```go
+val.updateValue() // valの型はvaluesで、receiverの要求する型はvaluesのポインタとなっているが、自動的にvaluesのポインタに変わり、アドレスが取得できる
+```
