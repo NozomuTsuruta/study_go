@@ -21,3 +21,10 @@ mapの変数名[key] = value
 // 削除
 delete(mapの変数名,key)
 ```
+
+mapとstructsの違い
+||map|structs|
+|keyの型|全て同じ|stringのみ|
+|valueの型|全て同じ|違う型にできる|
+|keyのindexサポート|○|×|
+|ポインタ|参照型|値型|

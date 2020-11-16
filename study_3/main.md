@@ -1,4 +1,4 @@
-構造体の定義
+structs の定義
 
 ```go
 type values struct {
@@ -7,7 +7,7 @@ type values struct {
 }
 ```
 
-構造体の宣言
+structs の宣言
 
 ```go
 val := values{"abc",3} or values{3,"abc"} // どっちがどっちかわからないので下の方がいい
@@ -34,7 +34,7 @@ var val values
 val.value="bcd" ← これはコピーされたvalの値を変えている
 ```
 
-構造体の値はメモリに保存され、普通に代入するだけだと他のアドレスとしてメモリに保存されるため変わらない
+structs の値はメモリに保存され、普通に代入するだけだと他のアドレスとしてメモリに保存されるため変わらない
 |Address|Value|
 |0000||
 |0001|values{value: "abc"...}|
@@ -51,7 +51,7 @@ func (pointerValues *values) updateValue() { // &で参照したvalのポイン�
 }
 ```
 
-& → 値をポインタに変換、* → ポインタを値に変換
+& → 値をポインタに変換、\* → ポインタを値に変換
 
 ポインタのショートカット
 
@@ -59,8 +59,7 @@ func (pointerValues *values) updateValue() { // &で参照したvalのポイン�
 val.updateValue() // valの型はvaluesで、receiverの要求する型はvaluesのポインタとなっているが、自動的にvaluesのポインタに変わり、アドレスが取得できる
 ```
 
-sliceを作成するとsliceのlength,capacity,基になる配列への参照を記録する配列とsliceの2つができる
+slice を作成すると slice の length,capacity,基になる配列への参照を記録する配列と slice の 2 つができる
 
-// slice作成 values{value: "abc",2}
-[sliceのlength, sliceのcapacity, 基の配列への参照] → slice + ["abc", 2] → array
-
+// slice 作成 values{value: "abc",2}
+[slice の length, slice の capacity, 基の配列への参照] → slice + ["abc", 2] → array

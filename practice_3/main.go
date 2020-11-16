@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// 構造体を使わない場合はそのまま値を更新できる
+// structsを使わない場合はそのまま値を更新できる
 func main() {
 	mySlice := []string{"Hello", "World"}
 	updateSlice(mySlice)

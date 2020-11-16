@@ -7,18 +7,25 @@ import (
 func main() {
 	// var colors map[string]string
 
-	colors := make(map[int]string)
+	// colors := make(map[int]string)
 
-	// colors := map[string]string{
-	// 	"red":   "#ff0000",
-	// 	"green": "#4bf745",
-	// }
+	colors := map[string]string{
+		"red":   "#ff0000",
+		"green": "#4bf745",
+		"white": "#ffffff",
+	}
 
 	// Error: colors.white →　keyがstring型だけではないため
-	
-	colors[10]="#ffffff"
 
-	delete(colors,10)
+	// colors[10]="#ffffff"
 
-	fmt.Println(colors)
+	// delete(colors,10)
+
+	printMap(colors)
+}
+
+func printMap(c map[string]string)  {
+	for color, hex := range c {
+		fmt.Println("Hex code for",color,"is",hex)
+	}
 }
