@@ -27,3 +27,27 @@ var val values
 | int    | 0            |
 | float  | 0            |
 | bool   | false        |
+
+ポインタ
+
+```go
+val.value="bcd" ← これはvalをコピーしてそれの値を変えている
+```
+
+構造体の値はメモリに保存され、普通に代入するだけだと他のアドレスとしてメモリに保存されるため変わらない
+|Address|Value|
+|0000||
+|0001|values{value: "abc"...}|
+|0002||
+|0003|values{value: "bcd"...} 更新した値|
+|0004||
+
+```go
+valPointer := &variable // これはオリジナルのvalのアドレスを参照できる(上の図では0001)
+
+func (pointerValues *values) updateValue() { // &で参照したvalのポインタの型を要求
+    // アドレスからメモリの値を変更する
+    *pointerValues.value = "bcd"
+}
+
+```
