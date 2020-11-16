@@ -9,7 +9,7 @@
 | equivalent | 等しい           |
 | annotate   | コメントを付ける |
 | convention | 慣習             |
-|            |                  |
+| argument   | 引数             |
 |            |                  |
 |            |                  |
 |            |                  |

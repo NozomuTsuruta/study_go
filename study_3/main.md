@@ -31,7 +31,7 @@ var val values
 ポインタ
 
 ```go
-val.value="bcd" ← これはvalをコピーしてそれの値を変えている
+val.value="bcd" ← これはコピーされたvalの値を変えている
 ```
 
 構造体の値はメモリに保存され、普通に代入するだけだと他のアドレスとしてメモリに保存されるため変わらない
@@ -49,11 +49,18 @@ func (pointerValues *values) updateValue() { // &で参照したvalのポイン�
     // アドレスからメモリの値を変更する
     *pointerValues.value = "bcd"
 }
-
 ```
+
+& → 値をポインタに変換、* → ポインタを値に変換
 
 ポインタのショートカット
 
 ```go
 val.updateValue() // valの型はvaluesで、receiverの要求する型はvaluesのポインタとなっているが、自動的にvaluesのポインタに変わり、アドレスが取得できる
 ```
+
+sliceを作成するとsliceのlength,capacity,基になる配列への参照を記録する配列とsliceの2つができる
+
+// slice作成 values{value: "abc",2}
+[sliceのlength, sliceのcapacity, 基の配列への参照] → slice + ["abc", 2] → array
+
