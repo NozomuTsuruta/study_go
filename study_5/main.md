@@ -11,7 +11,7 @@ interface
 
 ```go
 type person interface {
-    eatBreakFast()
+    eatBreakFast() string
 }
 
 type engineer struct {
