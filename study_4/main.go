@@ -24,8 +24,8 @@ func main() {
 	printMap(colors)
 }
 
-func printMap(c map[string]string)  {
+func printMap(c map[string]string) {
 	for color, hex := range c {
-		fmt.Println("Hex code for",color,"is",hex)
+		fmt.Println("Hex code for", color, "is", hex)
 	}
 }
