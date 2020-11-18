@@ -21,8 +21,18 @@ for 文
 range のあとの Slice の index と value にわけて、Slice の全ての要素を繰り返す
 
 ```go
+for i := 0; i<len(values); i++ {
+    fmt.Println(i)
+}
+
+// foreach
 for index, value := range values {
-    fmt.Plintln(value)
+    fmt.Println(value)
+}
+
+// 無限ループ
+for {
+
 }
 ```
 
