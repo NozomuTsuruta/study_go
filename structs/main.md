@@ -1,6 +1,15 @@
 structs の定義
 
 ```go
+var values struct {
+    value string
+    index int
+}{
+    value: "aaa",
+    index: 2,
+}
+
+// 構造体の型を定義している
 type values struct {
     value string
     index int
