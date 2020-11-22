@@ -13,7 +13,13 @@ func 関数名() 戻り値の型 {
 
 Slice 可変配列のようなもの、同じ型しか入れられない
 
-例)`values := string[]{"hello","world"}`
+```go
+values := string[]{"hello","world"}
+
+or
+
+values := make([]string,len,cap) //capを超えた場合初期値をlenを２倍にしただけのコピーが作られる 10000超えると+1/4
+```
 
 追加 → append(Slice,値)
 
@@ -25,6 +31,11 @@ for i := 0; i<len(values); i++ {
     fmt.Println(i)
 }
 
+// 継続条件のみ
+for i <= 100 {
+
+}
+
 // foreach
 for index, value := range values {
     fmt.Println(value)
@@ -32,7 +43,7 @@ for index, value := range values {
 
 // 無限ループ
 for {
-
+    break; // breakで抜け出せる
 }
 ```
 
@@ -62,6 +73,8 @@ slice名[startIndexIncluding : endIndexNotIncluding]
 slice名[: endIndexNotIncluding] // 0からendIndexNotIncludingまで
 
 slice名[startIndexIncluding:] // startIndexIncludingから最後まで
+
+slice名[:endIndexNotIncluding:Cap] // capacityも指定できる
 ```
 
 値を 2 つ返す関数
